@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Récupération du code de la branche') {
             steps {
-                sh 'git clone https://github.com/MondherMessadi/ProjetDevOps.git project_directory' 
+                sh 'https://github.com/MondherMessadi/ProjetDevOps.git' 
             }
         }
 
@@ -15,12 +15,13 @@ pipeline {
 
                 // Étape de compilation du projet
                 sh "mvn compile"
-            }
-            stage('MVN SONARQUBE') {
-            steps {
-                mvn sonar:sonar -Dsonar.login=sonar
+                // Etape de sonar
             }
         }
+      stage('MVN SONARQUBE'){
+        steps {
+            sh "mvn sonar:sonar -Dsonar.login=squ_2531e2da1270cc3577b092eae9d07ffb66b96fc8"
         }
+      }
     }
 }
