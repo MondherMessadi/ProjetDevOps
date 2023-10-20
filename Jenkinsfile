@@ -16,6 +16,11 @@ pipeline {
                 // Étape de compilation du projet
                 sh "mvn compile"
             }
+            stage('MVN SONARQUBE') {
+            steps {
+                mvn sonar:sonar -Dsonar.login=sonar
+            }
+        }
         }
     }
 }
