@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Récupération du code de la branche') {
+        stage('GIT') {
             steps {
                 sh 'https://github.com/MondherMessadi/ProjetDevOps.git' 
             }
