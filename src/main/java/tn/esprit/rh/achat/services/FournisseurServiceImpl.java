@@ -15,7 +15,6 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-@Slf4j
 public class FournisseurServiceImpl implements IFournisseurService {
 
 	@Autowired
@@ -31,7 +30,6 @@ public class FournisseurServiceImpl implements IFournisseurService {
 	public List<Fournisseur> retrieveAllFournisseurs() {
 		List<Fournisseur> fournisseurs = (List<Fournisseur>) fournisseurRepository.findAll();
 		for (Fournisseur fournisseur : fournisseurs) {
-			log.info(" fournisseur : " + fournisseur);
 		}
 		return fournisseurs;
 	}
