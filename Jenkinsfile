@@ -4,7 +4,8 @@ pipeline {
     stages {
         stage('Récupération du code de la branche') {
             steps {
-                sh 'git clone https://github.com/MondherMessadi/ProjetDevOps.git' 
+                git branch: 'hassenbenadel',
+                url: 'https://github.com/MondherMessadi/ProjetDevOps.git'
             }
         }
 
