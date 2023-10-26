@@ -22,6 +22,7 @@ pipeline {
             steps {
                 sh "mvn deploy"
             }
+        }
         stage('MVN SONARQUBE'){
         steps {
             sh "mvn sonar:sonar -Dsonar.login=sqa_9ef0a27231c4d3a5152a56982c2edbd71da162ec"
