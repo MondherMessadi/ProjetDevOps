@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     stages {
-        stage('GIT') {
+        stage('Récupération du code de la branche') {
             steps {
-                sh 'https://github.com/MondherMessadi/ProjetDevOps.git' 
+                sh 'git clone https://github.com/MondherMessadi/ProjetDevOps.git' 
             }
         }
 
@@ -18,10 +18,14 @@ pipeline {
                 // Etape de sonar
             }
         }
-      stage('MVN SONARQUBE'){
+        stage('mvn deploy'){
+            steps {
+                sh "mvn deploy"
+            }
+        stage('MVN SONARQUBE'){
         steps {
-            sh "mvn sonar:sonar -Dsonar.login=squ_2531e2da1270cc3577b092eae9d07ffb66b96fc8"
+            sh "mvn sonar:sonar -Dsonar.login=sqa_9ef0a27231c4d3a5152a56982c2edbd71da162ec"
         }
-      }
+        }
     }
 }
