@@ -17,12 +17,12 @@ import java.util.List;
 public class FournisseurTest {
 
     @Autowired
-    IFournisseurService ios;
+    IFournisseurService ifs;
 
     @Test
     @Order(1)
     public void testRetreiveAllOp(){
-        List<Fournisseur> ops = ios.retrieveAllFournisseurs();
+        List<Fournisseur> ops = ifs.retrieveAllFournisseurs();
         Assertions.assertEquals(0, ops.size());
     }
 
