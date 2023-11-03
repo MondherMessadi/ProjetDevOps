@@ -77,7 +77,7 @@
 		<repository>
 			<id>deploymentRepo</id>
 			<name>Nexus Repository</name>
-			<url>http://192.168.100.7:8081/repository/maven-releases/</url>
+			<url>http://192.168.100.7:8081/repository/Mondher_Messadi_5Seleam1/</url>
 		</repository>
 	</distributionManagement>
 	<build>
