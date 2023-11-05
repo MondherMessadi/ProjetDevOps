@@ -2,18 +2,7 @@ pipeline {
     agent any
 
 
-
-
-
     stages {
-
-
-            stage('Clean Workspace') {
-    steps {
-        cleanWs()
-        }
-    }    
-
         stage('Récupération du code de la branche') {
             steps {
                 git branch: 'hassenbenadel',
@@ -41,8 +30,6 @@ pipeline {
                 }
             }
         }
-
-
                 stage("Maven Build") {
             steps {
                 script {
@@ -91,15 +78,11 @@ stage('Push to DockerHub') {
         }
     }
 }
-
     stage('Deploy with Docker Compose') {
         steps {
                 sh 'docker-compose up -d'  // Use -d to run in detached mode
         
             }
         }
-
-
-
     }
 }
