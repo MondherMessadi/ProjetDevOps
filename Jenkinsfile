@@ -1,6 +1,15 @@
 pipeline {
     agent any
 
+
+
+    stage('Clean Workspace') {
+    steps {
+        cleanWs()
+        }
+    }    
+
+
     stages {
         stage('Récupération du code de la branche') {
             steps {
