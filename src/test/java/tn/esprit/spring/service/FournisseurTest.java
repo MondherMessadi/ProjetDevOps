@@ -22,8 +22,8 @@ public class FournisseurTest {
     @Test
     @Order(1)
     public void testRetreiveAllOp(){
-        List<Fournisseur> ops = ifs.retrieveAllFournisseurs();
-        Assertions.assertEquals(0, ops.size());
+        List<Fournisseur> frn = ifs.retrieveAllFournisseurs();
+        Assertions.assertEquals(0, frn.size());
     }
 
 
