@@ -80,6 +80,14 @@ stage('Push to DockerHub') {
     }
 }
 
+                stage('Deploy with Docker Compose') {
+            steps {
+                    sh 'docker-compose -f docker-compose.yml up -d'
+
+            }
+        }
+
+
 
     }
 }
