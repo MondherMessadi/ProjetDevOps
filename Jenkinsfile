@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Récupération du code de la branche') {
             steps {
-                git branch: 'MohamedTrabelsi',
+                git branch: 'hassenbenadel',
                 url: 'https://github.com/MondherMessadi/ProjetDevOps.git'
             }
         }
