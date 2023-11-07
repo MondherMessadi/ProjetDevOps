@@ -19,7 +19,7 @@ services:
     image: med
     restart: unless-stopped
     ports:
-      - 8089:8089
+      - 9050:9050
     depends_on:
       - mysqldb
 
