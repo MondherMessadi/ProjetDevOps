@@ -1,12 +1,28 @@
-version: "3.8"
+version: "3"
 services:
   mysqldb:
-    image: mysql:5.7
+    container_name: mysqldb
+    image: mysql:latest
     restart: unless-stopped
     ports:
-      - "3307:3306"
+      - 3306:3306
+    environment:
+      - MYSQL_USER:root
+      - MYSQL_PASSWORD:root
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=med5sleam1
     volumes:
-      - db:/var/lib/mysql
+      - db_vol:/var/lib/mysqldb
+
+  departement_app:
+    build: ./
+    image: med
+    restart: unless-stopped
+    ports:
+      - 8089:8089
+    depends_on:
+      - mysqldb
+
 
 volumes:
-  db: {}
+  db_vol:
