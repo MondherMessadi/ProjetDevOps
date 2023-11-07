@@ -25,11 +25,7 @@ pipeline {
             sh "mvn sonar:sonar -Dsonar.login=sqa_9ef0a27231c4d3a5152a56982c2edbd71da162ec"
         }
         }
-        stage('Mockito'){
-        steps {
-            sh "mvn test -e"
-        }
-        }
+        
         stage('mvn deploy'){
             steps {
                 sh "mvn deploy"
