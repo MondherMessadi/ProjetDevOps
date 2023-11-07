@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Récupération du code de la branche') {
             steps {
-                git branch: 'hassenbenadel',
+                git branch: 'MohamedTrabelsi',
                 url: 'https://github.com/MondherMessadi/ProjetDevOps.git'
             }
         }
@@ -27,7 +27,7 @@ pipeline {
         }
         stage('Mockito'){
         steps {
-            sh "mvn test"
+            sh "mvn test -e"
         }
         }
         stage('mvn deploy'){
