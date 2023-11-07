@@ -25,16 +25,9 @@ pipeline {
             sh "mvn sonar:sonar -Dsonar.login=sqa_9ef0a27231c4d3a5152a56982c2edbd71da162ec"
         }
         }
-        stage("Maven Build") {
+        stage('NEXUS') {
             steps {
-                script {
-                    sh "mvn package -DskipTests=true"
-                }
-            }
-        }
-        stage('mvn deploy'){
-            steps {
-                sh "mvn deploy"
+                sh 'mvn deploy -DskipTests'
             }
         }
         
