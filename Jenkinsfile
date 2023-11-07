@@ -45,5 +45,11 @@ environment {
                               sh 'docker push mohamedtrabelsi/med-5sleam1:1.0.0'
                           }
                       }
+        stage('Deploy with Docker Compose') {
+        steps {
+                sh 'docker-compose up -d'  // Use -d to run in detached mode
+        
+            }
+        }
     }
 }
