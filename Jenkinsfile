@@ -33,7 +33,7 @@ pipeline {
 
         stage('Docker Image') {
                            steps {
-                               sh 'docker build -t mahdiennour-5nids2-g3 .'
+                               sh 'docker build -t mohamedtrabelsi-5sleam1 .'
                            }
                }
         
