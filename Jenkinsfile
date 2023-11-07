@@ -63,7 +63,7 @@ pipeline {
             steps {
                 script {
                     // Build the Docker image (replace 'Dockerfile' with your Dockerfile location)
-                    sh 'docker build -t mondhermessadi/achat:1.0 -f Dockerfile .'
+                    sh 'docker build -t azizghebrich/achat:1.0 -f Dockerfile .'
                 }
             }
         }
@@ -71,11 +71,11 @@ pipeline {
         stage('Push to DockerHub') { 
             steps { 
                 script { // Log in to DockerHub using the credentials 
-                        withCredentials([string(credentialsId: 'dockerhub-password', variable: 'DOCKERHUB_PASSWORD')]) { 
-                        sh "docker login -u mondhermessadi -p ${DOCKERHUB_PASSWORD}" 
+                        withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'DOCKERHUB_PWD')]) { 
+                        sh "docker login -u azizghebrich -p ${DOCKERHUB_PWD}" 
                          } 
                            // Push the Docker image to DockerHub 
-                         sh 'docker push mondhermessadi/achat:1.0'
+                         sh 'docker push azizghebrich/achat:1.0'
                                                     }
                                                }
                                        }
