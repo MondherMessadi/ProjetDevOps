@@ -25,9 +25,30 @@ pipeline {
             sh "mvn sonar:sonar -Dsonar.login=sqa_9ef0a27231c4d3a5152a56982c2edbd71da162ec"
         }
         }
-        stage('NEXUS') {
+        stage("Maven Build") {
             steps {
-                sh 'mvn deploy -DskipTests'
+                script {
+                    sh "mvn package -DskipTests=true"
+                }
+            }
+        }
+
+stage('Publish Artifacts to Nexus') {
+            steps {
+                script {
+                    nexusArtifactUploader artifacts: [[
+                        artifactId: 'achat',
+                        classifier: '',
+                        file: 'target/achat-1.0.jar',
+                        type: 'jar']],
+                        credentialsId: 'nexusCredentials',
+                        groupId: 'tn.esprit.rh',
+                        nexusUrl: '192.168.56.8:8081',
+                        nexusVersion: 'nexus3',
+                        protocol: 'http',
+                        repository: 'maven-releases/',
+                        version: '1.0'
+                }
             }
         }
         
