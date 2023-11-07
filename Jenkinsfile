@@ -30,6 +30,12 @@ pipeline {
                 sh 'mvn deploy -DskipTests'
             }
         }
+
+        stage('Docker Image') {
+                           steps {
+                               sh 'docker build -t mahdiennour-5nids2-g3 .'
+                           }
+               }
         
     }
 }
