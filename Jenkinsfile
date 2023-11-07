@@ -36,6 +36,12 @@ pipeline {
                                sh 'docker build -t mohamedtrabelsi-5sleam1 .'
                            }
                }
-        
+        stage('DOCKERHUB') {
+                          steps {
+                              sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
+                              sh 'docker tag mohamedtrabelsi-5sleam1 mohamedtrabelsi/med-5sleam1:1.0.0'
+                              sh 'docker push mohamedtrabelsi/med-5sleam1:1.0.0'
+                          }
+                      }
     }
 }
