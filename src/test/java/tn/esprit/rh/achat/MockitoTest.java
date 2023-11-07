@@ -35,7 +35,8 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-
+@SpringBootTest
+@ExtendWith(MockitoExtension.class)
 @RunWith( SpringRunner.class)
 @ContextConfiguration(classes = {StockServiceImpl.class})
 public class MockitoTest {
