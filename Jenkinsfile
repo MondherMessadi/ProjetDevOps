@@ -21,6 +21,12 @@ environment {
                 // Etape de sonar
             }
         }
+
+        stage('Junit') {
+            steps {
+                sh "mvn test -e"  // Run JUnit tests
+            }
+        }
       
         stage('MVN SONARQUBE'){
         steps {
