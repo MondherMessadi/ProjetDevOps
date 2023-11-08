@@ -1,6 +1,6 @@
 
 package tn.esprit.rh.achat;
-import static org.assertj.core.api.Assertions.assertThat;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.Before;
@@ -42,7 +42,7 @@ public class MockitoTest {
 
     private StockServiceImpl service;
     private StockRepository repository;
-/**/    private MockMvc mockMvc;
+/*   private MockMvc mockMvc;
     ObjectMapper objectMapper = new ObjectMapper();
     ObjectWriter objectWriter = objectMapper.writer();
 @Mock
@@ -73,7 +73,7 @@ public class MockitoTest {
             .andExpect(status().isOk())
             .andExpect(MockMvcResultMatchers.jsonPath("$",hasSize(3)))
             .andExpect((ResultMatcher) jsonPath("$[2].libelleStock", is("alimentaire")));
-/**/}
+}*/
 
     @Test
     public void getStockTest(){
