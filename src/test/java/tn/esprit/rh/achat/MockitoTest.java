@@ -1,6 +1,6 @@
 
 package tn.esprit.rh.achat;
-
+import static org.assertj.core.api.Assertions.assertThat;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import org.junit.Before;
