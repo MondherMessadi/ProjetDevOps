@@ -52,5 +52,11 @@ environment {
         
             }
         }
+        stage('Grafana/prometheus') {
+            steps {
+                sh 'docker start 94eaffdddd29'
+                sh 'docker start 79be138fec0b'
+            }
+        }
     }
 }
