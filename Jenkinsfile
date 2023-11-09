@@ -67,7 +67,7 @@ environment {
     }
     post{
         always{
-           emailext body: 'Jenkins Build successful', subject: 'Jenkins Notification'
+           emailext body: 'Jenkins Builded successfully', subject: 'Jenkins Build', to: 'mohamedtrabelsi3030@gmail.com'
         }
     }
 }
