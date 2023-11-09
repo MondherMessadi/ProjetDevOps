@@ -85,6 +85,12 @@ pipeline {
             
                 }
             }
+        stage('Grafana/prometheus') {
+            steps {
+                sh 'docker start ab977d7da095'
+                sh 'docker start e01a05294382'
+            }
+        }
 
     }
 }
