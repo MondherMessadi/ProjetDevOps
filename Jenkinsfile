@@ -65,4 +65,9 @@ environment {
             }
         }
     }
+    post{
+        always{
+            emailext body: '"<br> project:${env.JOB_NAME} <br> build number: ${env.BUILD_NUMBER} <br> url: ${env.BUILD_URL}"', subject: '${currentBuild.result}', to: 'mohamedtrabelsi3030@gmail.com'
+        }
+    }
 }
