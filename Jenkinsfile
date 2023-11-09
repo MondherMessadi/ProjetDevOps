@@ -67,6 +67,6 @@ environment {
     }
     post{
         always{
-           emailext body: """'Project:${env.JOB_NAME} </br> Build Number: ${env.BUILD_NUMBER} </br> URL: ${env.BUILD_URL}', subject: '${currentBuild.result}'""", to: 'mohamedtrabelsi3030@gmail.com'
+           emailext body: 'Jenkins Build successful', subject: 'Jenkins Notification'
     }
 }
